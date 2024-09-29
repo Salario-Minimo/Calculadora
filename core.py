@@ -2,15 +2,6 @@ import streamlit as st
 
 class Core:
 
-  def GUI(self):
-    
-
-  
-    
-    
-    
-    
-
   
   def __init__(self):
     
