@@ -6,7 +6,7 @@ class Core:
 
   def base_gui(self):
     iterable = ("Diametro", "Conductividad", "Difusividad", "Temperatura inicial", "Temperatura ambiente", "Coeficiente de transferencia",
-                "Densidad", "Calor específico", "Distancia del centro", "Tiempo")
+                "Densidad", "Calor especifico", "Distancia del centro", "Tiempo")
     datos = []
 
     for x in iterable:
