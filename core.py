@@ -55,8 +55,11 @@ class Core:
     Calor = np.sum(calor_temp)
     
     Temperatura_final = Theta * (T_inicial - T_ambiente) + T_ambiente
+
+    Calor_maximo = Densidad * (Espesor * Calor_especifico * (T_ambiente - T_inicial))
+    Calor_final = (1 - Calor) * Calor_maximo
     
-    Temperatura_final
+    st.write("Temperatura_final:", Temperatura_final, "°C")
     
     
 Core()
