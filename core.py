@@ -10,8 +10,8 @@ class Core:
     datos = []
 
     for x in iterable:
-      datos.append(float(st.text_input(x)))
-    self.placa(*datos)
+      datos.append(float(st.text_input(x, placeholder="0")))
+    # self.placa(*datos)
       
   
   def __init__(self):
