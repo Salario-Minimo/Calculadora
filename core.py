@@ -3,7 +3,7 @@ import streamlit as st
 class Core:
 
   def GUI(self):
-    st.header("Calculadora"):
+    st.header("Calculadora")
     
     
     
