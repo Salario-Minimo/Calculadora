@@ -1,6 +1,8 @@
+import streamlit as st
+
 class Core:
   def __init__(self):
-    print("uwu")
+    st.write("uwu")
 
 
 Core()
