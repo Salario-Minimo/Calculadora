@@ -1,3 +1,3 @@
 class Core:
-  __init__(self):
+  def __init__(self):
     print("uwu")
