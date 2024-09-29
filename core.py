@@ -8,7 +8,7 @@ class Core:
     datos = []
 
     for x in iterable:
-      datos.append(st.number_input("iterable"))
+      datos.append(st.number_input(x))
     print(datos)
       
   
