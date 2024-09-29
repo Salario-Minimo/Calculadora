@@ -10,7 +10,7 @@ class Core:
     datos = []
 
     for x in iterable:
-      datos.append(st.number_input(x, format="%.16f"))
+      datos.append(float(st.text_input(x)))
     self.placa(*datos)
       
   
