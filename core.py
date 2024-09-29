@@ -11,7 +11,7 @@ class Core:
 
     for x in iterable:
       datos.append(float(st.text_input(x, value="0")))
-    # self.placa(*datos)
+    self.placa(*datos)
       
   
   def __init__(self):
