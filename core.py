@@ -9,7 +9,7 @@ class Core:
 
     for x in iterable:
       datos.append(st.number_input(x))
-    self.placa(datos)
+    self.placa(zip(datos))
       
   
   def __init__(self):
