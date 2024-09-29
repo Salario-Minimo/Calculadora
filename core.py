@@ -4,14 +4,18 @@ class Core:
 
   def GUI(self):
     st.header("Calculadora")
+
+  
+    
     
     
     
 
   
   def __init__(self):
-    self.datos = {}
-    self.GUI()
+    self.datos = []
+    st.radio("¿Qué figura vas a analizar?", ("Placa", "Cilindro", "Esfera"))
+    
 
 
 Core()
