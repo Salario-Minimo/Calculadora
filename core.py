@@ -64,45 +64,45 @@ class Core:
     st.write("Temperatura_final:", Temperatura_final, "°C")
     st.write("Calor_final:", Calor_final, "J")
 
-def esfera(self, Diametro, Conductividad, Difusividad, T_inicial, T_ambiente, Coeficiente_transferencia, Densidad, Calor_especifico, Distancia, Tiempo):
-  Longitud_caracteristica = Diametro / 2
-  Distancia_adimensional = Distancia / Longitud_caracteristica
-  Tiempo_adimensional = (Difusividad * Tiempo) / Longitud_caracteristica**2
-  Numero_biot = (Coeficiente_transferencia * Longitud_caracteristica) / Conductividad
+  def esfera(self, Diametro, Conductividad, Difusividad, T_inicial, T_ambiente, Coeficiente_transferencia, Densidad, Calor_especifico, Distancia, Tiempo):
+    Longitud_caracteristica = Diametro / 2
+    Distancia_adimensional = Distancia / Longitud_caracteristica
+    Tiempo_adimensional = (Difusividad * Tiempo) / Longitud_caracteristica**2
+    Numero_biot = (Coeficiente_transferencia * Longitud_caracteristica) / Conductividad
+    
+    Lambdas = [1,1,1]
+    
+    for n in range(3):
+      Lambda_temp = 1
+      while True:
+        Lambda_final = ((np.pi/2) - np.arctan((1-Numero_biot)/Lambda_temp)) + np.pi*n
+        if np.around(Lambda_temp, decimals=12) == np.around(Lambda_final, decimals=12):
+          break
+        else:
+          Lambda_temp = Lambda_final
+      Lambdas[n] = Lambda_final
+    
+    theta_temp = []
+    calor_temp = []
+    for n in Lambdas:
+      a = (4*(np.sin(n) - n*np.cos(n)))/(2*n - np.sin(2*n))
+      b = np.exp(- n**2 * Tiempo_adimensional)
+      c = np.sin(n*Distancia_adimensional)/(n*Distancia_adimensional)
+      Calor = 3*n*((np.sin(n)-n*np.cos(n))/n**3)*b
+      theta_temp.append(a*b*c)
+      calor_temp.append(Calor)
+    
+    Theta = np.sum(theta_temp)
+    Calor = np.sum(calor_temp)
+    
+    Temperatura_final = Theta * (T_inicial - T_ambiente) + T_ambiente
+    print(Temperatura_final)
+    
+    Calor_maximo = Densidad * ((4/3)*np.pi*(Diametro/2)**3) * Calor_especifico * (T_ambiente - T_inicial)
+    Calor_final = (1 - Calor) * Calor_maximo
   
-  Lambdas = [1,1,1]
-  
-  for n in range(3):
-    Lambda_temp = 1
-    while True:
-      Lambda_final = ((np.pi/2) - np.arctan((1-Numero_biot)/Lambda_temp)) + np.pi*n
-      if np.around(Lambda_temp, decimals=12) == np.around(Lambda_final, decimals=12):
-        break
-      else:
-        Lambda_temp = Lambda_final
-    Lambdas[n] = Lambda_final
-  
-  theta_temp = []
-  calor_temp = []
-  for n in Lambdas:
-    a = (4*(np.sin(n) - n*np.cos(n)))/(2*n - np.sin(2*n))
-    b = np.exp(- n**2 * Tiempo_adimensional)
-    c = np.sin(n*Distancia_adimensional)/(n*Distancia_adimensional)
-    Calor = 3*n*((np.sin(n)-n*np.cos(n))/n**3)*b
-    theta_temp.append(a*b*c)
-    calor_temp.append(Calor)
-  
-  Theta = np.sum(theta_temp)
-  Calor = np.sum(calor_temp)
-  
-  Temperatura_final = Theta * (T_inicial - T_ambiente) + T_ambiente
-  print(Temperatura_final)
-  
-  Calor_maximo = Densidad * ((4/3)*np.pi*(Diametro/2)**3) * Calor_especifico * (T_ambiente - T_inicial)
-  Calor_final = (1 - Calor) * Calor_maximo
-
-  st.write("Temperatura_final:", Temperatura_final, "°C")
-  st.write("Calor_final", Calor_final, "J")
+    st.write("Temperatura_final:", Temperatura_final, "°C")
+    st.write("Calor_final", Calor_final, "J")
 
     
 Core()
