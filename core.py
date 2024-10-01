@@ -11,13 +11,13 @@ class Core:
 
     for x in iterable:
       datos.append(float(st.text_input(x, value="0")))
-    self.selector["Esfera"](*datos)
+    self.selector["Placa"](*datos)
       
   
   def __init__(self):
     
     self.datos = []
-    self.selector = {"Placa":self.placa, "Esfera":self.esfera}
+    self.selector = {"Placa":self.placa}
 
     st.header("Calculadora")
     self.figura = st.radio("¿Qué figura vas a analizar?", ("Placa", "Cilindro", "Esfera", "Medio semi-infinito"), horizontal=True)
@@ -63,7 +63,7 @@ class Core:
     st.write("Temperatura_final:", Temperatura_final, "°C")
     st.write("Calor_final:", Calor_final, "J")
 
-
+"""
 def esfera(self, Diametro, Conductividad, Difusividad, T_inicial, T_ambiente, Coeficiente_transferencia, Densidad, Calor_especifico, Distancia, Tiempo):
   Longitud_caracteristica = Diametro / 2
   Distancia_adimensional = Distancia / Longitud_caracteristica
@@ -103,6 +103,6 @@ def esfera(self, Diametro, Conductividad, Difusividad, T_inicial, T_ambiente, Co
 
   st.write("Temperatura_final:", Temperatura_final, "°C")
   st.write("Calor_final", Calor_final, "J")
-    
+"""
     
 Core()
