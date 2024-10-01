@@ -10,7 +10,7 @@ class Core:
                 "Densidad", "Calor especifico", "Distancia del centro", "Tiempo")
     datos = []
 
-    if st.toggle("Solver")
+    if st.toggle("Solver"):
       "uwu"
     else:
       for x in iterable:
