@@ -60,6 +60,7 @@ class Core:
     Calor_final = (1 - Calor) * Calor_maximo
     
     st.write("Temperatura_final:", Temperatura_final, "°C")
+    st.write("Calor_final:", Calor_final, "J")
     
     
 Core()
