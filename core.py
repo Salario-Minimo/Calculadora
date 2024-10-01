@@ -88,7 +88,7 @@ class Core:
       a = (4*(np.sin(n) - n*np.cos(n)))/(2*n - np.sin(2*n))
       b = np.exp(- n**2 * Tiempo_adimensional)
       c = np.sin(n*Distancia_adimensional)/(n*Distancia_adimensional)
-      Calor = 3*n*((np.sin(n)-n*np.cos(n))/n**3)*b
+      Calor = 3*a*b*((np.sin(n)-n*np.cos(n))/n**3)
       theta_temp.append(a*b*c)
       calor_temp.append(Calor)
     
