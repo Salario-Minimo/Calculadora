@@ -1,6 +1,7 @@
 import streamlit as st
 import numpy as np
 from scipy.special import jv
+from scipy.optimize import fsolve
 
 class Core:
 
@@ -9,10 +10,13 @@ class Core:
                 "Densidad", "Calor especifico", "Distancia del centro", "Tiempo")
     datos = []
 
-    for x in iterable:
-      datos.append(float(st.text_input(x, value="0")))
-    if st.button("Calcular"):
-      self.selector[self.figura](*datos)
+    if st.toggle("Solver")
+      "uwu"
+    else:
+      for x in iterable:
+        datos.append(float(st.text_input(x, value="0")))
+      if st.button("Calcular"):
+        self.selector[self.figura](*datos)
       
   
   def __init__(self):
@@ -22,7 +26,6 @@ class Core:
 
     st.header("Calculadora")
     self.figura = st.radio("¿Qué figura vas a analizar?", ("Placa", "Cilindro", "Esfera", "Medio semi-infinito"), horizontal=True)
-    st.write(self.figura == "Placa")
     self.base_gui()
     
   def placa(self, Espesor, Conductividad, Difusividad, T_inicial, T_ambiente, Coeficiente_transferencia, Densidad, Calor_especifico, Distancia, Tiempo):
@@ -65,6 +68,8 @@ class Core:
     st.write("Temperatura_final:", Temperatura_final, "°C")
     st.write("Calor_final:", Calor_final, "J")
 
+    return (Temperatura_final, Calor_final)
+
   def esfera(self, Diametro, Conductividad, Difusividad, T_inicial, T_ambiente, Coeficiente_transferencia, Densidad, Calor_especifico, Distancia, Tiempo):
     Longitud_caracteristica = Diametro / 2
     Distancia_adimensional = Distancia / Longitud_caracteristica
@@ -105,6 +110,9 @@ class Core:
     st.write("Temperatura_final:", Temperatura_final, "°C")
     st.write("Calor_final", Calor_final, "J")
 
+    return (Temperatura_final, Calor_final)
+    
+  
   def cilindro(self, Diametro, Conductividad, Difusividad, T_inicial, T_ambiente, Coeficiente_transferencia, Densidad, Calor_especifico, Distancia, Tiempo):
 
     Longitud_caracteristica = Diametro / 2
@@ -145,4 +153,9 @@ class Core:
     st.write("Temperatura_final:", Temperatura_final, "°C")
     st.write("Calor_final", Calor_final, "J")
 
+    return (Temperatura_final, Calor_final)
+
+  def funcion_error(self):
+    return
+    
 Core()
