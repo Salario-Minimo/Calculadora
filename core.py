@@ -11,7 +11,7 @@ class Core:
 
     for x in iterable:
       datos.append(float(st.text_input(x, value="0")))
-    self.selector[self.selector](*datos)
+    self.selector["Placa"](*datos)
       
   
   def __init__(self):
@@ -21,7 +21,7 @@ class Core:
 
     st.header("Calculadora")
     self.figura = st.radio("¿Qué figura vas a analizar?", ("Placa", "Cilindro", "Esfera", "Medio semi-infinito"), horizontal=True)
-    self.figura
+    st.write(self.figura)
     self.base_gui()
     
   def placa(self, Espesor, Conductividad, Difusividad, T_inicial, T_ambiente, Coeficiente_transferencia, Densidad, Calor_especifico, Distancia, Tiempo):
