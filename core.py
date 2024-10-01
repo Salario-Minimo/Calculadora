@@ -11,7 +11,7 @@ class Core:
 
     for x in iterable:
       datos.append(float(st.text_input(x, value="0")))
-    self.selector[self.figura](*datos)
+    st.button("Calcular", on_click=self.selector[self.figura], args=*datos)
       
   
   def __init__(self):
