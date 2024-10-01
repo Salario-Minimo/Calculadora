@@ -17,7 +17,7 @@ class Core:
   def __init__(self):
     
     self.datos = []
-    self.selector = {"Placa":self.placa}
+    self.selector = {"Placa":self.placa, "Esfera":self.esfera}
 
     st.header("Calculadora")
     self.figura = st.radio("¿Qué figura vas a analizar?", ("Placa", "Cilindro", "Esfera", "Medio semi-infinito"), horizontal=True)
