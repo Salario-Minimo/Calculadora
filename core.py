@@ -11,13 +11,13 @@ class Core:
 
     for x in iterable:
       datos.append(float(st.text_input(x, value="0")))
-    self.selector[self.figura]
+    self.selector[self.figura](*datos)
       
   
   def __init__(self):
     
     self.datos = []
-    self.selector = {"Placa":self.placa, "Esfera",self.esfera}
+    self.selector = {"Placa":self.placa, "Esfera":self.esfera}
 
     st.header("Calculadora")
     self.figura = st.radio("¿Qué figura vas a analizar?", ("Placa", "Cilindro", "Esfera", "Medio semi-infinito"), horizontal=True)
