@@ -22,9 +22,9 @@ class Core:
     st.radio("¿Qué figura vas a analizar?", ("Placa", "Cilindro", "Esfera", "Medio semi-infinito"), horizontal=True)
     self.base_gui()
     
-  def placa(self, Espesor, Conductividad, Difusividad, T_inicial, T_ambiente, Coeficiente_transferencia, Densidad, Calor_específico, Distancia, Tiempo):
+  def placa(self, Espesor, Conductividad, Difusividad, T_inicial, T_ambiente, Coeficiente_transferencia, Densidad, Calor_especifico, Distancia, Tiempo):
     
-    Longitud_característica = Espesor / 2
+    Longitud_caracteristica = Espesor / 2
     Distancia_adimensional = Distancia / Longitud_característica
     Tiempo_adimensional = (Difusividad * Tiempo) / Longitud_característica**2
     Numero_biot = (Coeficiente_transferencia * Longitud_característica) / Conductividad
