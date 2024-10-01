@@ -64,7 +64,6 @@ class Core:
     st.write("Temperatura_final:", Temperatura_final, "°C")
     st.write("Calor_final:", Calor_final, "J")
 
-"""
 def esfera(self, Diametro, Conductividad, Difusividad, T_inicial, T_ambiente, Coeficiente_transferencia, Densidad, Calor_especifico, Distancia, Tiempo):
   Longitud_caracteristica = Diametro / 2
   Distancia_adimensional = Distancia / Longitud_caracteristica
@@ -104,6 +103,6 @@ def esfera(self, Diametro, Conductividad, Difusividad, T_inicial, T_ambiente, Co
 
   st.write("Temperatura_final:", Temperatura_final, "°C")
   st.write("Calor_final", Calor_final, "J")
-"""
+
     
 Core()
