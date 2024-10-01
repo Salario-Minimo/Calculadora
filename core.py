@@ -25,9 +25,9 @@ class Core:
   def placa(self, Espesor, Conductividad, Difusividad, T_inicial, T_ambiente, Coeficiente_transferencia, Densidad, Calor_especifico, Distancia, Tiempo):
     
     Longitud_caracteristica = Espesor / 2
-    Distancia_adimensional = Distancia / Longitud_característica
-    Tiempo_adimensional = (Difusividad * Tiempo) / Longitud_característica**2
-    Numero_biot = (Coeficiente_transferencia * Longitud_característica) / Conductividad
+    Distancia_adimensional = Distancia / Longitud_caracteristica
+    Tiempo_adimensional = (Difusividad * Tiempo) / Longitud_caracteristica**2
+    Numero_biot = (Coeficiente_transferencia * Longitud_caracteristica) / Conductividad
     
     Lambdas = [1,1,1]
     
