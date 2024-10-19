@@ -168,7 +168,7 @@ class Core:
     return (Temperatura_final, Calor_final)
 
   def solver(self):
-    
+    "."
 
   def funcion_error(self):
     return
