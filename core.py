@@ -17,7 +17,15 @@ class Core:
         self.selector[self.figura](*datos)
         
     else:
+      temp = iterable
       selección = st.selectbox("¿Qué variable buscas?",iterable)
+
+      for x in temp:
+        datos.append(float(st.text_input(x, value="0")))
+
+      if st.button("Calcular"):
+        "uwu"
+      
       st.write(iterable.index(selección))
 
       
@@ -157,6 +165,9 @@ class Core:
     st.write("Calor_final", Calor_final, "J")
 
     return (Temperatura_final, Calor_final)
+
+  def solver(self):
+    
 
   def funcion_error(self):
     return
