@@ -19,7 +19,7 @@ class Core:
     else:
       temp = list(iterable)
       seleccion = st.selectbox("¿Qué variable buscas?",iterable)
-      indice = temp.index(seleccion)
+      self.indice = temp.index(seleccion)
       temp.remove(seleccion)
       
 
@@ -29,9 +29,9 @@ class Core:
       self.valor_deseado = float(st.text_input("Valor deseado de"))
 
       if st.button("Calcular"):
-        self.solver
+        fsolve(funcion_error, 1, args=(datos))
       
-      st.write(indice)
+      st.write(self.indice)
 
       
   
@@ -171,13 +171,9 @@ class Core:
 
     return (Temperatura_final, Calor_final)
 
-  def solver(self):
-    "."
 
-  def dif_solver(self):
-    
-
-  def funcion_error(self):
-    return
+  def funcion_error(self, value, data):
+    data.insert(value, self.index)
+    return self.selector[self.figura](*data) - self.valor_deseado
     
 Core()
