@@ -173,7 +173,8 @@ class Core:
 
 
   def funcion_error(self, value, data):
-    st.write(type(self.indice))
+    if isinstance(self.indice, int):
+      st.write("OwO")
     data.insert(value, self.indice)
     return self.selector[self.figura](*data)[0] - self.valor_deseado
     
