@@ -174,6 +174,6 @@ class Core:
 
   def funcion_error(self, value, data):
     data.insert(value, self.index)
-    return self.selector[self.figura](*data) - self.valor_deseado
+    return self.selector[self.figura](*data)[0] - self.valor_deseado
     
 Core()
