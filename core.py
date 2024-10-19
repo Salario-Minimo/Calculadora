@@ -17,7 +17,7 @@ class Core:
         self.selector[self.figura](*datos)
         
     else:
-      selección = st.selectbox(iterable)
+      selección = st.selectbox("¿Qué variable buscas?",iterable)
       print(index(selección))
 
       
