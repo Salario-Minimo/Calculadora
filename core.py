@@ -29,7 +29,7 @@ class Core:
       self.valor_deseado = float(st.text_input("Valor deseado de"))
 
       if st.button("Calcular"):
-        fsolve(funcion_error, 1, args=(datos))
+        fsolve(self.funcion_error, 1, args=(datos))
       
       st.write(self.indice)
 
