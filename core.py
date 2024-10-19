@@ -17,8 +17,10 @@ class Core:
         self.selector[self.figura](*datos)
         
     else:
-      temp = iterable
-      selección = st.selectbox("¿Qué variable buscas?",iterable)
+      temp = list(iterable)
+      seleccion = st.selectbox("¿Qué variable buscas?",iterable)
+      temp.remove(seleccion)
+      
 
       for x in temp:
         datos.append(float(st.text_input(x, value="0")))
