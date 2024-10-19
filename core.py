@@ -27,6 +27,7 @@ class Core:
         "uwu"
       
       st.write(iterable.index(selección))
+      st.write("uwu")
 
       
   
