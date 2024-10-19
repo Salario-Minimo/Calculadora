@@ -28,7 +28,7 @@ class Core:
       if st.button("Calcular"):
         "uwu"
       
-      st.write(iterable.index(selección))
+      st.write(iterable.index(seleccion))
       st.write("uwu")
 
       
