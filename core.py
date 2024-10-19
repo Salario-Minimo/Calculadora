@@ -26,8 +26,10 @@ class Core:
       for x in temp:
         datos.append(float(st.text_input(x, value="0")))
 
+      self.valor_deseado = float(st.text_input("Valor deseado de"))
+
       if st.button("Calcular"):
-        "uwu"
+        self.solver
       
       st.write(indice)
 
@@ -171,6 +173,9 @@ class Core:
 
   def solver(self):
     "."
+
+  def dif_solver(self):
+    
 
   def funcion_error(self):
     return
