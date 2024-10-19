@@ -10,13 +10,16 @@ class Core:
                 "Densidad", "Calor especifico", "Distancia del centro", "Tiempo")
     datos = []
 
-    if st.toggle("Solver"):
-      "uwu"
-    else:
+    if not st.toggle("Solver"):
       for x in iterable:
         datos.append(float(st.text_input(x, value="0")))
       if st.button("Calcular"):
         self.selector[self.figura](*datos)
+        
+    else:
+      selección = st.selectbox(iterable)
+      print(index(selección))
+
       
   
   def __init__(self):
