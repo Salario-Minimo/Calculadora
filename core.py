@@ -19,6 +19,7 @@ class Core:
     else:
       temp = list(iterable)
       seleccion = st.selectbox("¿Qué variable buscas?",iterable)
+      indice = temp.index(seleccion)
       temp.remove(seleccion)
       
 
@@ -28,8 +29,7 @@ class Core:
       if st.button("Calcular"):
         "uwu"
       
-      st.write(iterable.index(seleccion))
-      st.write("uwu")
+      st.write(indice)
 
       
   
