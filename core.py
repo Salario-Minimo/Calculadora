@@ -18,7 +18,7 @@ class Core:
         
     else:
       selección = st.selectbox("¿Qué variable buscas?",iterable)
-      print(iterable.index(selección))
+      iterable.index(selección)
 
       
   
